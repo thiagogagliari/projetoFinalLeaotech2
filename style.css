@@ -69,12 +69,13 @@ nav {
   text-decoration: none;
   font-size: 18px;
   font-weight: normal;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .nav-links a:hover {
   font-weight: 600;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 2px solid var(--bg-color-nav-header);
 }
 
 .nav-links a:hover {
