@@ -269,18 +269,40 @@ footer{
 }
 
 /* RESPONSIVE*/
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 320px){
   nav{
-    flex-direction: column;
+    height: 300px;
+    display: block;
     padding: 0;
     text-align: center;
   }
   .nav-links{
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     margin: 5px;
   }
+
+  nav, .nav-links a{
+    display: block;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: left;
+  }
   .overlay-image{
     width: 80%;
+  }
+
+  .pictures{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 2000px;
+  }
+
+  .pictures img{
+    width: 200px;
+    height: 200px;
   }
   .section-two{
     margin: 0;
@@ -298,11 +320,60 @@ footer{
     width: 100%;
   }
   .titles-section-one{
+    font-size: 15px;
+    text-align: center;
     width: 90%;
   }
-  .btn-more{
+  .btn-more, button{
     margin-bottom: 30px;
   }
+
+  .section-four h3{
+    font-size: 15px;
+  }
+
+  .section-five{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0px;
+  }
+
+  .section-five img{
+    align-items: center;
+    width: 300px;
+    height: 180px;
+    margin: 40px;
+  }
+
+  .footer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  footer img{
+    width: 80px;
+    height: 80px;
+    margin: 16px;
+  }
+
+  .icon img{
+    width: 50px;
+    height: 50px;
+    margin: 16px;
+  }
+  footer a{
+    font-size: 10px;
+  }
+
+  footer h3{
+    font-size: 20px;
+  }
+  footer p{
+    font-size: 15px;
+    margin: 15px;
+  }
+
   details{
     width: 90%;
     height: 80%;
