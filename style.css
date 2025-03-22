@@ -9,13 +9,16 @@
   --bg-color-nav-header: #2F2655;
   --color-subtitle: #36345A
 }
+
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--bg-color-project);
 }
 
+html {
+  scroll-behavior: smooth;
+}
 * {
-  /* padding: 0; */
   margin: 0;
 }
 
@@ -24,10 +27,12 @@ body {
   background-color: var(--bg-color-nav-header);
   height: 26px;
 }
+
 .bottom-bar {
   background-color: var(--secondary-color);
   height: 26px;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -35,13 +40,16 @@ nav {
   padding: 15px 40px;
   background-color: var(--terciary-color);
 }
+
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   font-size: 16px;
   font-weight: 500;
   list-style: none;
   gap: 25px;
 }
+
 .nav-links a {
   color: var(--color-nav-header);
   text-decoration: none;
@@ -89,6 +97,7 @@ nav {
   letter-spacing: 2%;
   color: var(--terciary-color);
 }
+
 .section-two {
   margin: 20px 40px;
   display: flex;
@@ -96,6 +105,7 @@ nav {
   align-items: center;
   gap: 50px;
 }
+
 .titles-section-one {
   width: 595px;
   text-align: left;
@@ -139,65 +149,77 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 2100px;
+  height: 100%;
+  padding-bottom:50px;
   background-color: #011759;
   background-image: url(./assets/imageSetas.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
-
-.section-tree img {
-  margin: 15px;
+.pictures{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.section-four{
+.pictures img {
+  max-width: 400px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.section-tree img:hover{
+  transform: scale(1.09);
+}
+
+.section-four {
   height: 218px;
   text-align: center;
   background-color: var(--terciary-color);
 }
-.section-four img{
+
+.section-four img {
   margin-top: 30px;
   width: 335px;
   height: 98px;
 }
 
-.section-five{
+.section-five {
   display: grid;
+  flex-wrap: wrap;
   grid-template-columns: repeat(3, 1fr);
   padding: 100px;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 60px;
 
 }
-.section-five img{
+
+.section-five img {
   transition: transform 0.3s ease;
+  width: 100%;
 }
-.section-five img:hover{
+
+.section-five img:hover {
   transform: scale(1.09);
 }
 
-.section-five img{
-  width: 500px;
-  height: 300px;
-  border-radius: 6px;
-}
-details{
+details {
   font-family: "Inter", sans-serif;
   color: var(--terciary-color);
   background-color: #0E1116;
   border-radius: 6px;
-  width: 1000px;
+  width: 90%;
+  max-width: 1000px;
   cursor: pointer;
   margin: 10px;
   transition: transform 0.3s ease;
 }
+
 details:hover,
 summary:hover::after,
-details[open] > summary:hover::after
-{
+details[open]>summary:hover::after {
   transform: scale(1.09);
 }
+
 summary {
   display: flex;
   font-family: "Inter", sans-serif;
@@ -206,15 +228,19 @@ summary {
   font-weight: 600;
   cursor: pointer;
   margin: 30px;
+  
 }
-summary::after{
+
+summary::after {
   content: url(./assets/btnOpen.png);
   transition: transform 0.3s ease;
 }
-details[open] > summary::after {
+
+details[open]>summary::after {
   content: url(./assets/btnClose.png);
   transition: transform 0.3s ease;
 }
+
 details p {
   font-family: "Inter", sans-serif;
   line-height: 34px;
@@ -222,7 +248,8 @@ details p {
   font-weight: 400;
   margin: 30px;
 }
-h2{
+
+h2 {
   font-size: "koulen", sans-serif;
   font-size: 44px;
   color: white;
@@ -230,19 +257,21 @@ h2{
   line-height: 34px;
 }
 
-h3{
+h3 {
   font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 34px;
 }
-footer{
-  height: 414px;
+
+footer {
+  height: 100%;
   background-color: #011759;
   display: flex;
-  justify-content:space-around;
-  padding-top: 120px;
-  h3{
+  justify-content: space-around;
+  padding: 120px;
+
+  h3 {
     font-family: "koulen", sans-serif;
     font-weight: 200;
     font-size: 24px;
@@ -250,7 +279,8 @@ footer{
     color: var(--terciary-color);
 
   }
-  a{
+
+  a {
     display: flex;
     font-family: "Inter", sans-serif;
     text-decoration: none;
@@ -259,122 +289,125 @@ footer{
     line-height: 34px;
     color: var(--secondary-color);
   }
-  p{
+
+  p {
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 34px;
     color: #EAEEEF;
+    margin: 15px 0;
+  }
+  .icon img{
+    cursor: pointer;
+    margin: 5px;
   }
 }
 
 /* RESPONSIVE*/
-@media (max-width: 768px) and (min-width: 320px){
-  nav{
+@media (max-width: 768px) and (min-width: 320px) {
+  body{
+    width: fit-content;
+  }
+  nav {
     height: 300px;
     display: block;
     padding: 0;
     text-align: center;
   }
-  .nav-links{
-    display: flex;
+
+  .nav-links {
     flex-direction: column;
     gap: 10px;
     margin: 5px;
   }
 
-  nav, .nav-links a{
-    display: block;
-    flex-direction: column;
+  nav,
+  .nav-links a {
     font-size: 15px;
     text-align: left;
   }
-  .overlay-image{
+
+  .overlay-image {
     width: 80%;
   }
 
-  .pictures{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 2000px;
+  .pictures img {
+   width: 60%;
   }
 
-  .pictures img{
-    width: 200px;
-    height: 200px;
-  }
-  .section-two{
+  .section-two {
     margin: 0;
     flex-direction: column;
     text-align: center;
   }
+
   .title-principal {
     margin: 0;
     text-align: center;
   }
+
   .subTitle {
     text-align: justify;
   }
-  .img-two{
+
+  .img-two {
     width: 100%;
   }
-  .titles-section-one{
+
+  .titles-section-one {
     font-size: 15px;
     text-align: center;
     width: 90%;
   }
-  .btn-more, button{
+
+  .btn-more,
+  button {
     margin-bottom: 30px;
   }
 
-  .section-four h3{
+  .section-four h3 {
     font-size: 15px;
   }
-
-  .section-five{
-    display: flex;
-    justify-content: center;
+  .section-four img{
     width: 100%;
-    padding: 0px;
   }
 
-  .section-five img{
-    align-items: center;
-    width: 300px;
-    height: 180px;
-    margin: 40px;
+  .section-five {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 20px;
   }
-
-  .footer{
+  .footer {
     display: flex;
     flex-wrap: wrap;
   }
-
-  footer img{
-    width: 80px;
-    height: 80px;
-    margin: 16px;
+  .icon img {
+    max-width: 60%;
   }
-
-  .icon img{
-    width: 50px;
-    height: 50px;
-    margin: 16px;
+  footer{
+    max-width: 100%;
+    padding: 10px;
+    font-size: 10%;
   }
-  footer a{
+  footer img {
+    max-width: 60%;
+  }
+  footer a {
     font-size: 10px;
+    line-height: 30px;
   }
 
-  footer h3{
+  footer h3 {
     font-size: 20px;
   }
-  footer p{
+
+  footer p {
     font-size: 15px;
-    margin: 15px;
+    margin: 10px;
   }
 
-  details{
+  details {
     width: 90%;
     height: 80%;
   }
