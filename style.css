@@ -7,7 +7,8 @@
   --bg-color-project: #D9D9D9;
   --color-nav-header: #000000;
   --bg-color-nav-header: #2F2655;
-  --color-subtitle: #36345A
+  --color-subtitle: #36345A;
+  --color-aleatory: #2ca5f0;
 }
 
 body {
@@ -20,6 +21,8 @@ html {
 }
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*LINHA AZUL E VERMELHO */
@@ -55,7 +58,7 @@ nav {
   text-decoration: none;
   font-size: 18px;
   font-weight: normal;
-  transition: 0.2s;
+  transition: 0.8s;
 }
 
 .image-section {
@@ -151,7 +154,7 @@ nav {
   align-items: center;
   height: 100%;
   padding-bottom:50px;
-  background-color: #011759;
+  background-color: var(--primary-color);
   background-image: url(./assets/imageSetas.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -205,7 +208,7 @@ nav {
 details {
   font-family: "Inter", sans-serif;
   color: var(--terciary-color);
-  background-color: #0E1116;
+  background-color: var(--color-nav-header);
   border-radius: 6px;
   width: 90%;
   max-width: 1000px;
@@ -252,7 +255,7 @@ details p {
 h2 {
   font-size: "koulen", sans-serif;
   font-size: 44px;
-  color: white;
+  color: var(--bg-color-project);
   margin: 50px;
   line-height: 34px;
 }
@@ -266,42 +269,39 @@ h3 {
 
 footer {
   height: 100%;
-  background-color: #011759;
+  background-color: var(--primary-color);
   display: flex;
   justify-content: space-around;
   padding: 120px;
 
-  h3 {
-    font-family: "koulen", sans-serif;
-    font-weight: 200;
-    font-size: 24px;
-    line-height: 34px;
-    color: var(--terciary-color);
+a {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 34px;
+  color: var(--secondary-color);
+}
 
+p {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  color: var(--bg-color-project);
+  margin: 15px 0;
+}
+  
+.icon img{
+  cursor: pointer;
+  margin: 5px;
   }
+}
 
-  a {
-    display: flex;
-    font-family: "Inter", sans-serif;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 34px;
-    color: var(--secondary-color);
-  }
-
-  p {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 34px;
-    color: #EAEEEF;
-    margin: 15px 0;
-  }
-  .icon img{
-    cursor: pointer;
-    margin: 5px;
-  }
+#social a:hover{
+  color: var(--color-aleatory);
+  transition: 0.8s;
 }
 
 /* RESPONSIVE*/
@@ -405,6 +405,10 @@ footer {
   footer p {
     font-size: 15px;
     margin: 10px;
+  }
+
+  summary{
+    font-size: 20px;
   }
 
   details {
