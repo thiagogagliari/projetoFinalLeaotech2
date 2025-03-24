@@ -9,6 +9,7 @@
   --bg-color-nav-header: #2F2655;
   --color-subtitle: #36345A;
   --color-aleatory: #2ca5f0;
+  --color-navbar: 
 }
 
 body {
@@ -35,31 +36,67 @@ html {
   background-color: var(--secondary-color);
   height: 26px;
 }
-
-nav {
+.nav-bar{
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 15px 40px;
-  background-color: var(--terciary-color);
-}
-
-.nav-links {
-  display: flex;
+  list-style: none;
+  position: relative;
   flex-wrap: wrap;
   font-size: 16px;
   font-weight: 500;
   list-style: none;
   gap: 25px;
 }
-
-.nav-links a {
+.menu{display: flex;}
+.menu li{padding-left: 30px;}
+.menu li a{
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.15s ease-in-out;
+  position: relative;
   color: var(--color-nav-header);
   text-decoration: none;
   font-size: 18px;
   font-weight: normal;
   transition: 0.8s;
 }
+.menu li a:hover{
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--bg-color-nav-header);
+  color: var(--bg-color-nav-header);
+  font-weight: 800;
+}
+.menu li a::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after{
+  width: 100%;
+}
+.open-menu, .close-menu{
+  position: absolute;
+  cursor: pointer;
+  display: none;
+}
+.open-menu{
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.close-menu{
+  top: 20px;
+  right: 20px;
+}
+#check{display: none;}
 
 .image-section {
   display: flex;
@@ -76,12 +113,10 @@ nav {
   font-weight: 600;
   text-decoration: none;
   border-bottom: 2px solid var(--bg-color-nav-header);
-}
-
-.nav-links a:hover {
   color: var(--bg-color-nav-header);
   font-weight: 800;
 }
+
 
 .background-image {
   width: 100%;
@@ -265,6 +300,7 @@ h3 {
   font-size: 24px;
   font-weight: 600;
   line-height: 34px;
+  color: var(--terciary-color);
 }
 
 footer {
@@ -310,7 +346,6 @@ p {
     width: fit-content;
   }
   nav {
-    height: 300px;
     display: block;
     padding: 0;
     text-align: center;
@@ -415,4 +450,22 @@ p {
     width: 90%;
     height: 80%;
   }
+  .menu{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    position: fixed;
+    top: 0px;
+    right:-100%;
+    z-index: 100;
+    transition: all 0.2s ease-in-out;
+    background: var(--terciary-color);
+}
+.menu{
+  padding-top: 70px;
+}
+.menu li{margin: 10px;}
+.open-menu, .close-menu{display: block;}
+#check:checked ~ .menu{right: 0;}
 }
