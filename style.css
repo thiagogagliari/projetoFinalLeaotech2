@@ -48,6 +48,7 @@ html {
   font-weight: 500;
   list-style: none;
   gap: 25px;
+  background-color: var(--terciary-color);
 }
 .menu{display: flex;}
 .menu li{padding-left: 30px;}
@@ -302,6 +303,9 @@ h3 {
   line-height: 34px;
   color: var(--terciary-color);
 }
+#projetos h3{
+  color: var(--primary-color);
+}
 
 footer {
   height: 100%;
@@ -405,7 +409,7 @@ p {
     font-size: 15px;
   }
   .section-four img{
-    width: 100%;
+    width: 90%;
   }
 
   .section-five {
@@ -461,6 +465,7 @@ p {
     z-index: 100;
     transition: all 0.2s ease-in-out;
     background: var(--terciary-color);
+    border-bottom-left-radius: 15px;
 }
 .menu{
   padding-top: 70px;
